@@ -1,13 +1,13 @@
 # Mina's Convene Startup OS
 
-Your AI system for building Convene — the all-in-one conference operations platform for student clubs. Three agents that handle customer discovery, competitive intelligence, and product design so you can focus on talking to organizers and making decisions.
+Your AI system for building Convene — the all-in-one conference operations platform for student clubs. Three agents that handle customer discovery, day-of event operations, and product design so you can focus on talking to organizers and making decisions.
 
 ## What's Inside
 
 | Agent | What It Does |
 |-------|-------------|
 | **@conference-detective** | Analyzes survey results, tracks hypotheses, designs experiments, manages discovery conversations. Your customer research engine. |
-| **@platform-scout** | Maps every competitor and tool in the space. Builds feature gap matrices. Finds where Convene wins. |
+| **@event-commander** | Builds volunteer shift schedules, station briefing docs, speaker logistics trackers, and briefing packets. Handles the day-of chaos: no-shows, schedule overruns, speaker cancellations, reallocation. |
 | **@blueprint-builder** | Translates research into product: conference templates, onboarding flows, feature priorities, and business models. |
 
 ## Setup (One-Time, ~10 Minutes)
@@ -48,7 +48,7 @@ Or open the Claude Code desktop app and point it to this folder.
 ```
 
 ```
-@platform-scout how is Convene different from Eventbrite?
+@event-commander We have 20 volunteers and 6 speakers for a 150-person conference next Friday. Build the operations plan.
 ```
 
 ```
@@ -64,9 +64,9 @@ mina-convene-os/
 ├── README.md                                  # This file (setup guide for you)
 └── .claude/
     └── skills/
-        ├── conference-detective/SKILL.md      # How @conference-detective works
-        ├── platform-scout/SKILL.md            # How @platform-scout works
-        └── blueprint-builder/SKILL.md         # How @blueprint-builder works
+        ├── conference-detective/SKILL.md      # Customer discovery engine
+        ├── event-commander/SKILL.md           # Day-of volunteer + speaker operations
+        └── blueprint-builder/SKILL.md         # Product architecture
 ```
 
 ## How It Works (Non-Technical)
@@ -75,13 +75,33 @@ When you open Claude Code in this folder, it reads `CLAUDE.md` and understands i
 
 The `.mcp.json` file connects Claude Code to your Google Workspace — so agents can read and write Docs, Sheets, Slides, Calendar, and Gmail.
 
-Talk to the system in plain English. Mention an agent name to activate its specialty. The agents work together: what @conference-detective learns feeds @platform-scout's analysis, which feeds @blueprint-builder's designs.
+Talk to the system in plain English. Mention an agent name to activate its specialty. The agents work together: what @conference-detective learns feeds @event-commander's operational designs, which feed @blueprint-builder's product specs.
+
+## What @event-commander Produces
+
+This is the most hands-on agent. For any conference, it generates:
+
+**For volunteers:**
+- Master roster with shifts, stations, and backup assignments
+- Station briefing docs (one page each — exactly what to do, where to go, who to call when things go wrong)
+- No-show reallocation plan (pre-decided playbook for every gap)
+- Reminder texts to send at 7 days, 48 hours, and morning-of
+
+**For speakers:**
+- Logistics tracker with AV needs, arrival times, and assigned liaisons
+- Individual briefing packets (room details, AV setup, campus directions, schedule, liaison contact)
+- Time management cards (15 min / 5 min / 1 min / STOP)
+- Contingency playbook for late arrivals, AV failures, and cancellations
+
+**For day-of:**
+- Live volunteer check-in tracker
+- Speaker status board
+- Cascade protocol when sessions run over
 
 ## Key Links
 
 - **Survey (questions):** https://docs.google.com/forms/d/1wQmEDYQqEDU7Px1iDxokLA03hxBKKWg5VwdesS_QCZM/viewform
 - **Survey (results):** https://docs.google.com/forms/d/1wQmEDYQqEDU7Px1iDxokLA03hxBKKWg5VwdesS_QCZM/edit
-- **Wireframe:** (link TBD)
 
 ## Privacy
 
